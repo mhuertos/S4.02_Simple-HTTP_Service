@@ -53,25 +53,21 @@ public class EmpleadoController {
 		return empleadoService.listarEmpleados(director);
 	}
 	
-	//Not necessary
-	/*@PostMapping("/añadir")
-	public void añadirEmpleado(@RequestBody Empleado empleado) {
-		empleadoService.añadirEmpleado(empleado);
-	}*/
-	
-	
 	@PostMapping("/añadirJefe")
-	public void añadirJefe(@RequestBody Jefe jefe) {
+	public void añadirJefe(@RequestParam(required=true)String nombre) {
+		Jefe jefe = new Jefe(nombre);
 		empleadoService.añadirEmpleado(jefe);
 	}
 	
 	@PostMapping("/añadirSecretario")
-	public void añadirEmpleado(@RequestBody Secretario secretario) {
+	public void añadirSecretario(@RequestParam(required=true)String nombre) {
+		Secretario secretario = new Secretario(nombre);
 		empleadoService.añadirEmpleado(secretario);
 	}
 	
 	@PostMapping("/añadirDirector")
-	public void añadirEmpleado(@RequestBody Director director) {
+	public void añadirDirector(@RequestParam(required=true)String nombre) {
+		Director director = new Director(nombre);
 		empleadoService.añadirEmpleado(director);
 	}
 	
@@ -88,7 +84,6 @@ public class EmpleadoController {
 			@RequestParam(required=false) Double salario) {
 		
 		empleadoService.actualizaEmpleado(idEmpleado, nombre, salario);
-		
 	}
 		
 
