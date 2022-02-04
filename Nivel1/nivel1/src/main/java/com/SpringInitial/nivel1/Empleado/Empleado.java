@@ -1,11 +1,11 @@
 package com.SpringInitial.nivel1.Empleado;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity(name = "Empleado")
@@ -28,6 +28,16 @@ public class Empleado {
 			nullable=false)
 	private String tipo_emp;
 	
+	//Es el bueno
+	/*@Lob
+	@Column(name="imatge")
+	private byte[] imatge;*/
+	
+	//Pruebas
+	@Column(name= "imatge",
+			length=45,
+			nullable=true)
+	private String imatge;
 	
 	public Empleado() {
 	}
@@ -66,11 +76,32 @@ public class Empleado {
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
+	
+//Buenos
+	/*public byte[] getImatge() {
+		return imatge;
+	}
+
+
+	public void setImatge(byte[] imatge) {
+		this.imatge = imatge;
+	}*/
+	
+	//Pruebas
+	public String getImatge() {
+		return imatge;
+	}
+
+	public void setImatge(String imatge) {
+		this.imatge = imatge;
+	}
+
 
 	@Override
 	public String toString() {
 		return "Empleado [id=" + idEmpleado + ", nombre=" + nombre + ", salario=" + salario + ", tipo_emp=" + tipo_emp + "]";
 	}
+
 
 	
 	
