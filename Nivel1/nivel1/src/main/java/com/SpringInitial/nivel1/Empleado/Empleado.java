@@ -28,12 +28,6 @@ public class Empleado {
 			nullable=false)
 	private String tipo_emp;
 	
-	//Es el bueno
-	/*@Lob
-	@Column(name="imatge")
-	private byte[] imatge;*/
-	
-	//Pruebas
 	@Column(name= "imatge",
 			length=45,
 			nullable=true)
@@ -77,17 +71,6 @@ public class Empleado {
 		this.salario = salario;
 	}
 	
-//Buenos
-	/*public byte[] getImatge() {
-		return imatge;
-	}
-
-
-	public void setImatge(byte[] imatge) {
-		this.imatge = imatge;
-	}*/
-	
-	//Pruebas
 	public String getImatge() {
 		return imatge;
 	}
@@ -96,14 +79,8 @@ public class Empleado {
 		this.imatge = imatge;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Empleado [id=" + idEmpleado + ", nombre=" + nombre + ", salario=" + salario + ", tipo_emp=" + tipo_emp + "]";
 	}
-
-
-	
-	
-	
 }

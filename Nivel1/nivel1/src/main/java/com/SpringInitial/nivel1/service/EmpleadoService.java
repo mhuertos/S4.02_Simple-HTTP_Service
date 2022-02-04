@@ -63,13 +63,11 @@ public class EmpleadoService {
 		Empleado empleado = empleadoRepository.findById(idEmpleado)
 				.orElseThrow(() -> new IllegalStateException("El empleado con id "
 															+idEmpleado+" no existe."));
-		
 		if(nombre != null 
 				&& nombre.length() > 0 
 				&& !Objects.equals(nombre, empleado.getNombre())) {
 			empleado.setNombre(nombre);
 		}
-		
 		if(salario!= null && salario > 0) {
 			empleado.setSalario(salario);
 		}
